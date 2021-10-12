@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+echo "Linking vimrc with ./vimrc\n"
+echo "Linking zshrc with ./zshrc\n"
+echo "Linking p10k.zsh with ~/.p10k.zsh"
+echo "Linking nvim with ~/.config/nvim"
+
+ln -sf vimrc ~/.vimrc
+ln -sf zshrc ~/.zshrc
+ln -sf p10k.zsh ~/.p10k.zsh
+ln -sf nvim ~/.config/nvim
