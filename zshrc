@@ -5,8 +5,31 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ -r "${HOME}/.zsh.aliases" ]]; then
+# This is only true when on the hydra machines
+if [[ -r "${HOME}/.zsh.prompt" ]]; then
+
+    autoload -U compinit
+    compinit
+
+    unset MAIL
+
+    source $HOME/.zsh.prompt
+    source $HOME/.zsh.path
+    source $HOME/.zsh.manpath
     source $HOME/.zsh.aliases
+
+    bindkey -d
+
+    umask 077
+
+    limit coredumpsize 0
+    
+    setopt nohup
+    setopt nobeep
+    setopt nocheckjobs
+    setopt longlistjobs
+    setopt pushdtohome
+    setopt noflowcontrol
 fi
 
 # If you come from bash you might have to change your $PATH.
