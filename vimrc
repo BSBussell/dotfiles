@@ -1,8 +1,5 @@
-
-
 syntax on
 
-set t_kb=
 set nocompatible
 set backspace=eol,indent,start
 
@@ -183,3 +180,4 @@ let g:syntastic_cpp_include_dirs = ["include"]
 
 
 
+set backspace=2
