@@ -8,9 +8,7 @@ ln -sf $PWD/vimrc ~/.vimrc
 ln -sf $PWD/zshrc ~/.zshrc
 ln -sf $PWD/p10k.zsh ~/.p10k.zsh
 
-NVIMPATH=(command -v nvim)
-
-if [ [$NVIMPATH != ""] ] 
+if [[ -r "${HOME}/.config/nvim" ]] 
 then
   echo "Linking nvim with ~/.config/nvim"
   ln -sf $PWD/nvim ~/.config/nvim
