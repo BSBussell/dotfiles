@@ -149,4 +149,11 @@ alias vimCfg="vi ~/.config/nvim/init.vim"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# If statement here exists to change the terminal if logging in from iPhone
+hostname=$(who am i | cut -f2  -d\( | rev | cut -c2- | rev )
+if [[ $hostname == "bbusphone.nomads.utk.edu" ]]
+then
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+else    
+    [[ ! -f ~/.p10kFull.zsh ]] || source ~/.p10kFull.zsh
+fi
