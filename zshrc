@@ -5,7 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source $HOME/.zsh.aliases
+if [[ -r "${HOME}/.zsh.aliases" ]]; then
+    source $HOME/.zsh.aliases
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -109,8 +111,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if [ command -v nvim &> /dev/null ] 
-then
+
+if [[ -r "${HOME}/.config/nvim" ]]; then
     alias vi="nvim"
     alias vim="nvim"
 fi
