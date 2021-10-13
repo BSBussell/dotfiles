@@ -73,12 +73,17 @@ endif
 set noshowmode
 
 " Plugins
-" Install vim-plug if missing
+" Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall | source $MYVIMRC
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 
 " Start vim-plug
 call plug#begin('~/.vim/plugged')
@@ -125,11 +130,11 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" Set Colorscheme
-colorscheme onehalfdark
+" Set Colorscheme if onehalfdark isn't found on first start up try again
+silent! colorscheme onehalfdark
 
 " AirPlane Config
-let g:airline_theme='onehalfdark'
+silent! let g:airline_theme='onehalfdark'
 
 " We have powerline
 let g:airline_powerline_fonts = 1
