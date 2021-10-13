@@ -6,9 +6,11 @@ echo "Linking p10k.zsh with ~/.p10k.zsh"
 echo "Linking p10kFull.zsh with ~/.p10kFull.zsh"
 
 ln -sf $PWD/vimrc ~/.vimrc
+ln -sf $PWD/.vim ~/
 ln -sf $PWD/zshrc ~/.zshrc
 ln -sf $PWD/p10k.zsh ~/.p10k.zsh
 ln -sf $PWD/p10kFull.zsh ~/.p10kFull.zsh
+
 
 if [[ -r "${HOME}/.config/nvim" ]] 
 then
