@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 
-echo "Linking vimrc with ./vimrc"
-echo "Linking zshrc with ./zshrc"
+echo "Linking vimrc with ~/.vimrc"
+echo "Linking .vim with ~/.vim"
+echo "Linking zshrc with ~/.zshrc"
 echo "Linking p10k.zsh with ~/.p10k.zsh"
 echo "Linking p10kFull.zsh with ~/.p10kFull.zsh"
 
