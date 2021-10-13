@@ -1,0 +1,62 @@
+##################################################################
+#
+#         .zsh_files/.zsh.aliases file
+#
+#         Read in every time a new interactive zsh is started.
+#         Defines some useful aliases.
+#
+##################################################################
+
+alias RM='rm -f'
+
+alias c='clear'
+alias ls="ls --color=auto -F" # color ls is cool
+alias la="ls -la"
+alias ll="ls -lh"
+alias lla="ls -lah"
+alias view="vim -R"
+alias l='less'
+
+alias got='echo "Got Milk?"; sleep 1; git'
+
+function lazygit() {
+    git add -u
+    git commit -a -m "$1"
+    git push
+}
+
+viewScript() {
+    PROMPT=${2:-cat}
+    FILES=$(./gradescript $1 | grep -oP '(?<=<).*')
+    if [[ $FILES != "" ]]
+    then
+        CMD="$PROMPT $FILES"
+        eval ${CMD}
+        touch tmp.txt
+        rm *tmp*
+    else
+        echo "Gradescript failed to run"
+    fi
+
+}
+
+compareTmp() {
+    PROMPT=${2:-vimdiff}
+   
+    if [[ $PROMPT == "vi" ]]
+    then
+        PROMPT="vim"
+        FLAGS="-O"
+    else
+        FLAGS=""
+    fi
+    FILES=$(./gradescript $1 | grep -oP '(?<=output is in ).*(?=.)' | tr '\n' ' ')
+    if [[ $FILES != "" ]]
+    then
+        CMD="$PROMPT $FILES $FLAGS"
+        eval ${CMD}
+        rm *tmp*
+    else
+        echo "No Differences"
+    fi
+}

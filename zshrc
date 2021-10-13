@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# I like these aliases
+if [[ -r "${HOME}/.zsh.aliases" ]]; then
+    
+    source $HOME/.zsh.aliases
+
+fi
 # This is only true when on the hydra machines
 if [[ -r "${HOME}/.zsh.prompt" ]]; then
 
@@ -16,7 +22,6 @@ if [[ -r "${HOME}/.zsh.prompt" ]]; then
     source $HOME/.zsh.prompt
     source $HOME/.zsh.path
     source $HOME/.zsh.manpath
-    source $HOME/.zsh.aliases
 
     bindkey -d
 
