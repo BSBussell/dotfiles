@@ -150,6 +150,8 @@ alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias vimCfg="vi ~/.config/nvim/init.vim"
 
 
+TIMEFMT=$'===================\n\nreal\t%E\nuser\t%U\nsys\t%S'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # If statement here exists to change the terminal if logging in from iPhone
 hostname=$(who am i | cut -f2  -d\( | rev | cut -c2- | rev )
