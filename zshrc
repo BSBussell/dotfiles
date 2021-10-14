@@ -6,11 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # I like these aliases
-if [[ -r "${HOME}/.zsh.aliases" ]]; then
-    
-    source $HOME/.zsh.aliases
+source $HOME/.zsh.aliases
 
-fi
 # This is only true when on the hydra machines
 if [[ -r "${HOME}/.zsh.prompt" ]]; then
 
@@ -162,3 +159,6 @@ then
 else    
     [[ ! -f ~/.p10kFull.zsh ]] || source ~/.p10kFull.zsh
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

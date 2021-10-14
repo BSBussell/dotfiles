@@ -10,7 +10,7 @@
 alias RM='rm -f'
 
 alias c='clear'
-alias ls="ls --color=auto -F" # color ls is cool
+alias ls="ls -G -F" # color ls is cool
 alias la="ls -la"
 alias ll="ls -lh"
 alias lla="ls -lah"
@@ -18,6 +18,8 @@ alias view="vim -R"
 alias l='less'
 
 alias got='echo "Got Milk?"; sleep 1; git'
+
+alias colortest='curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash'
 
 function lazygit() {
     git add -u
