@@ -27,7 +27,12 @@ function lazygit() {
     git push
 }
 
-viewScript() {
+function repeatTime() {
+    
+    time ( repeat $1 { $2 > /dev/null } ) 
+}
+
+function viewScript() {
     PROMPT=${2:-cat}
     FILES=$(./gradescript $1 | grep -oP '(?<=<).*')
     if [[ $FILES != "" ]]
@@ -42,7 +47,7 @@ viewScript() {
 
 }
 
-compareTmp() {
+function compareTmp() {
     PROMPT=${2:-vimdiff}
    
     if [[ $PROMPT == "vi" ]]
