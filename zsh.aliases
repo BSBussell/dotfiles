@@ -32,7 +32,11 @@ function repeatTime() {
     time ( repeat $1 { $2 > /dev/null } ) 
 }
 
+# Shell scrips are hard
+
+# Usage: viewscript <script number> <optional: editor>
 function viewScript() {
+
     PROMPT=${2:-cat}
     FILES=$(./gradescript $1 | grep -oP '(?<=<).*')
     if [[ $FILES != "" ]]
@@ -47,7 +51,10 @@ function viewScript() {
 
 }
 
+
+# Usage: compareTmp <script number> <optional: editor>
 function compareTmp() {
+    
     PROMPT=${2:-vimdiff}
    
     if [[ $PROMPT == "vi" ]]
