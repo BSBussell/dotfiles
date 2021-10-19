@@ -15,10 +15,21 @@ ln -sf $PWD/p10k.zsh ~/.p10k.zsh
 ln -sf $PWD/p10kFull.zsh ~/.p10kFull.zsh
 
 
-if [[ -r "${HOME}/.config/nvim" ]] 
+if [ -r "${HOME}/.config/nvim" ] 
 then
   echo "Linking nvim with ~/.config/nvim"
   ln -sf $PWD/nvim ~/.config/nvim
-else
-    echo "Neovim not found"
+fi
+
+if [ ! -r "${HOME}/.oh-my-zsh" ]
+then
+  echo "Installing oh-my-zsh"
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+if [ ! -r "${HOME}/.oh-my-zsh/custom/themes/powerlevel10k" ]
+then
+  echo "Installing Powerlevel 10k"
+  cd ${HOME}
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
