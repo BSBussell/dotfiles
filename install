@@ -1,0 +1,45 @@
+#!/usr/bin/env zsh
+
+# Check if oh-my-zsh is installed
+# Install if missing
+if [ ! -r "${HOME}/.oh-my-zsh" ]
+then
+  echo "Installing oh-my-zsh"
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+# Check if Powerlevel10k is installed
+# Install if missing
+if [ ! -r "${HOME}/.oh-my-zsh/custom/themes/powerlevel10k" ]
+then
+  echo "Installing Powerlevel 10k"
+  cd ${HOME}
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+fi
+
+# Link all the files
+
+echo "Linking vimrc with ~/.vimrc"
+ln -sf $PWD/vimrc ~/.vimrc
+
+echo "Linking .vim with ~/.vim"
+ln -sf $PWD/.vim ~/
+
+echo "Linking zshrc with ~/.zshrc"
+ln -sf $PWD/zshrc ~/.zshrc
+
+echo "Linking zsh.aliases with ~/.zsh.aliases"
+ln -sf $PWD/zsh.aliases ~/.zsh.aliases
+
+echo "Linking p10k.zsh with ~/.p10k.zsh"
+ln -sf $PWD/p10k.zsh ~/.p10k.zsh
+
+echo "Linking p10kFull.zsh with ~/.p10kFull.zsh"
+ln -sf $PWD/p10kFull.zsh ~/.p10kFull.zsh
+
+# Check if nvim exists on system and link if it does
+if [ -r "${HOME}/.config/nvim" ] 
+then
+  echo "Linking nvim with ~/.config/nvim"
+  ln -sf $PWD/nvim ~/.config/nvim
+fi
