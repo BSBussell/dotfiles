@@ -8,6 +8,7 @@ set viminfo="h"
 
 " 4 Space tabs are holy
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 
 " I believe if I use tab instead of spaces it is less likely that 
@@ -96,8 +97,10 @@ call plug#begin('~/.vim/plugged')
 
     " Syntax Checker
     Plug 'scrooloose/syntastic'
+    
     " SuperTab Autocomplete Tool
     Plug 'ervandew/supertab'
+    
     " Git Gutter
     Plug 'airblade/vim-gitgutter'
 
