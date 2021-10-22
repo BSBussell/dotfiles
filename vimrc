@@ -6,15 +6,13 @@ set backspace=eol,indent,start
 " don't highlight the last search upon startup
 set viminfo="h"
 
-" Do C-style auto indentation on C/C++/Perl files only :)
-"filetype plugin indent on
-"autocmd FileType c,cpp,perl :set cindent
-
 " 4 Space tabs are holy
 set tabstop=4
 set shiftwidth=4
 
-" Less likely to mess up indentation if we use \t
+" I believe if I use tab instead of spaces it is less likely that 
+" we might accidentally delete a space from the tab or something
+" Ensure no accidental 3 space tabs are created
 set noexpandtab
 
 " Indent Rules
@@ -22,36 +20,28 @@ set autoindent
 set smartindent 
 set cindent
 
-" set ruler
 set background=dark
 
-"match parenthesis, i.e. ) with (  and } with {
-set showmatch
+set showmatch               " When () or [] inserted jump to matching one
 
-"ignore case when doing searches
-set ignorecase
-set smartcase
+set report=0                " Always report when lines have been changed 
 
-"tell you how many lines have been changed
-set report=0
+set scrolloff=5             " Minimum number of lines to keep above and below the cursor 
+set wildmode=longest,list   " Completion mode used, list all matches, and go till longest common string
+set incsearch               " When searching show the pattern as typed 
+set hlsearch                " High search after searched
+set smartcase               " When searching ignore case when pattern is all lowercase
 
-set scrolloff=5
-set wildmode=longest,list
-set incsearch
-set hlsearch
-
-" C++ template
-autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
-
-set number              " Enable Line numbers
-set nuw=6               " Set line number 6 spaces from edge
-set noswapfile          " No more swp files, just do it right
-set spell               " Spell checker
-set title               " Set terminal title
-set noerrorbells        " No error noise
-set visualbell          " Flash on err
-set wildmenu            " Auto complete
-set undolevels=1000
+set number                  " Enable Line numbers
+set nuw=6                   " Set line number 6 spaces from edge
+set noswapfile              " No more swp files, please be smart
+set spell                   " Spell checker
+set title                   " Set terminal title
+set titlestring=%t          " Set terminal title to filename
+set noerrorbells            " No error noise
+set visualbell              " Flash on err
+set wildmenu                " Auto complete
+set undolevels=1000         " Can undo up to 1000 times B)
 
 " use ' as leader key
 let mapleader = "'"
@@ -59,7 +49,10 @@ let mapleader = "'"
 " use double-Esc to completely clear the search buffer
 nnoremap <silent> <Esc><Esc> :let @/ = ""<CR>
 
-" ensure colors are consistient
+" C++ template
+autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+
+" ensure colors are consistient likely redundant
 set termguicolors
 set t_Co=255
 
@@ -73,6 +66,7 @@ endif
 set noshowmode
 
 " Plugins
+
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -145,7 +139,7 @@ let g:aitline#extensions#tabline#enabled = 1 " Enable the list of buffers
 " accidentally overwriting its contents.
 
 if !exists('g:airline_symbols')
-                let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 
 " powerline symbols
@@ -175,14 +169,3 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = "-Wall -Wextra -std=c++98"
 let g:syntastic_cpp_include_dirs = ["include"]
 
-" Highlights
-" hi cCustomFunc  gui=bold guifg=yellowgreen
-" hi cCustomClass gui=reverse guifg=#00FF00
-
-" Ensure Comments are visible on most Themes
-" hi Comment guifg=#8594ab
-" hi LineNr guifg=#8594ab
-
-
-
-set backspace=2
