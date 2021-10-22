@@ -11,25 +11,25 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" I believe if I use tab instead of spaces it is less likely that 
+" I believe if I use tab instead of spaces it is less likely that
 " we might accidentally delete a space from the tab or something
 " Ensure no accidental 3 space tabs are created
 set noexpandtab
 
 " Indent Rules
 set autoindent
-set smartindent 
+set smartindent
 set cindent
 
 set background=dark
 
 set showmatch               " When () or [] inserted jump to matching one
 
-set report=0                " Always report when lines have been changed 
+set report=0                " Always report when lines have been changed
 
-set scrolloff=5             " Minimum number of lines to keep above and below the cursor 
+set scrolloff=5             " Minimum number of lines to keep above and below the cursor
 set wildmode=longest,list   " Completion mode used, list all matches, and go till longest common string
-set incsearch               " When searching show the pattern as typed 
+set incsearch               " When searching show the pattern as typed
 set hlsearch                " High search after searched
 set smartcase               " When searching ignore case when pattern is all lowercase
 
@@ -49,6 +49,9 @@ let mapleader = "'"
 
 " use double-Esc to completely clear the search buffer
 nnoremap <silent> <Esc><Esc> :let @/ = ""<CR>
+
+" Use F5 to remove all trailing white space
+nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " C++ template
 autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
@@ -97,10 +100,10 @@ call plug#begin('~/.vim/plugged')
 
     " Syntax Checker
     Plug 'scrooloose/syntastic'
-    
+
     " SuperTab Autocomplete Tool
     Plug 'ervandew/supertab'
-    
+
     " Git Gutter
     Plug 'airblade/vim-gitgutter'
 
