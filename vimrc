@@ -73,7 +73,8 @@ endif
 " Airplane will already shows the mode
 set noshowmode
 
-" Plugins
+" Plugins - From this section on all settings have to do with vim-plug
+" ####################################################################################################
 
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -122,6 +123,7 @@ call plug#begin('~/.vim/plugged')
 
     " Colorschemes
     Plug 'flazz/vim-colorschemes'
+    
     " One Half Theme
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
@@ -137,7 +139,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " Set Colorscheme if onehalfdark isn't found on first start up try again
 silent! colorscheme onehalfdark
 
-" AirPlane Config
+" AirPlane Config set to be silent since this will fail on first startup
 silent! let g:airline_theme='onehalfdark'
 
 " We have powerline
