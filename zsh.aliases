@@ -38,7 +38,7 @@ function repeatTime() {
 function viewScript() {
 
     PROMPT=${2:-cat}
-    FILES=$(./gradescript $1 | grep -oP '(?<=<).*')
+    FILES=$(./gradescript $1 | grep '*.txt\b' | cut -d' ' -f2-)
     if [[ $FILES != "" ]]
     then
         CMD="$PROMPT $FILES"

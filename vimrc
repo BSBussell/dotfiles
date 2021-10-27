@@ -53,6 +53,10 @@ nnoremap <silent> <Esc><Esc> :let @/ = ""<CR>
 " Use F5 to remove all trailing white space
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
+nnoremap <silent> <F2> :wa <CR>
+nnoremap <silent> <F3> :wqa <CR>
+nnoremap <silent> <F4> :qa <CR>
+
 " C++ template
 autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
 
