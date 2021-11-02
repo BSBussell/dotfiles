@@ -140,6 +140,8 @@ source $ZSH/oh-my-zsh.sh
 if [[ -r "${HOME}/.config/nvim" ]]; then
     alias vi="nvim"
     alias vim="nvim"
+else 
+    alias nvim="vim"
 fi
 
 
