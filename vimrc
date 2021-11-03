@@ -47,11 +47,11 @@ set undolevels=1000         " Can undo up to 1000 times B)
 " use ' as leader key
 let mapleader = "'"
 
+" Use FixTrail to remove all trailing white space
+command FixTrail :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s
+
 " use double-Esc to completely clear the search buffer
 nnoremap <silent> <Esc><Esc> :let @/ = ""<CR>
-
-" Use F5 to remove all trailing white space
-nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 nnoremap <silent> <F2> :wa <CR>
 nnoremap <silent> <F3> :wqa <CR>
@@ -121,9 +121,15 @@ call plug#begin('~/.vim/plugged')
     " Comfortable Motion
     Plug 'yuttie/comfortable-motion.vim'
 
+    " Vim-Visual-Multi
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
+    " Vim-Signature
+    Plug 'kshenoy/vim-signature'
+
     " Colorschemes
     Plug 'flazz/vim-colorschemes'
-    
+
     " One Half Theme
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
