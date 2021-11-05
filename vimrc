@@ -47,6 +47,8 @@ set undolevels=1000         " Can undo up to 1000 times B)
 " use ' as leader key
 let mapleader = "'"
 
+command HolyTab :set ts=2 noet | retab! | set noet ts=4 sw=4 sts=4 | retab
+
 " Use FixTrail to remove all trailing white space
 command FixTrail :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s
 
