@@ -175,8 +175,9 @@ let g:airline_symbols.dirty='⚡'
 
 " Fancy Section Configuration
 let g:airline_section_z = "%p%% | Line: %l/%L | Col: %c"
+let g:airline_section_y = ""
 
-" Syntastic
+" Syntastic configuration
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
