@@ -138,19 +138,20 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
-" Nerdtree hotkeys
+" ########## Nerdtree hotkeys ##########
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
+" ########## Color Schemes ##########
 " Set Colorscheme if onehalfdark isn't found on first start up try again
 silent! colorscheme onehalfdark
 
 " AirPlane Config set to be silent since this will fail on first startup
 silent! let g:airline_theme='onehalfdark'
 
-" We have powerline
+" ########## Powerline ##########
 let g:airline_powerline_fonts = 1
 let g:aitline#extensions#tabline#enabled = 1 " Enable the list of buffers
 
@@ -177,7 +178,7 @@ let g:airline_symbols.dirty='⚡'
 let g:airline_section_z = "%p%% | Line: %l/%L | Col: %c"
 let g:airline_section_y = ""
 
-" Syntastic configuration
+" ########## Syntastic ##########
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -188,5 +189,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_cpp_compiler_options = "-Wall -Wextra -std=c++98"
-let g:syntastic_cpp_include_dirs = ["include"]
+let g:syntastic_cpp_include_dirs = ["include", "plank-disjoint-sets/include"]
 

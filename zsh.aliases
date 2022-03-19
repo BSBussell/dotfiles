@@ -9,6 +9,8 @@
 
 alias RM='rm -f'
 
+alias vimconfig='vi ~/dotfiles/vimrc'
+
 alias c='clear'
 alias ls="ls -G -F" # color ls is cool
 alias la="ls -la"
@@ -21,18 +23,20 @@ alias got='echo "Got Milk?"; sleep 1; git'
 
 alias colortest='curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash'
 
+# Usage: lazygit <message>
 function lazygit() {
     git add -u
     git commit -a -m "$1"
     git push
 }
 
+# Usage: repeateTime <repetitions> <program/action to repeat>
 function repeatTime() {
     
     time ( repeat $1 { $2 > /dev/null } ) 
 }
 
-# Shell scrips are hard
+# Shell Scripts for Help working with Plank GradeScripts 
 
 # Usage: viewscript <script number> <optional: editor>
 function viewScript() {
