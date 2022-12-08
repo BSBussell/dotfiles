@@ -44,6 +44,8 @@ set visualbell              " Flash on err
 set wildmenu                " Auto complete
 set undolevels=1000         " Can undo up to 1000 times B)
 
+set mouse=a                 " Allow mouse to scroll through vim
+
 " use ' as leader key
 let mapleader = "'"
 
@@ -112,7 +114,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ervandew/supertab'
 
     " Git Gutter
-    Plug 'airblade/vim-gitgutter'
+    "Plug 'airblade/vim-gitgutter'
 
     " The Nerd Tree
     Plug 'scrooloose/nerdtree'
@@ -130,7 +132,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kshenoy/vim-signature'
 
     " Colorschemes
-    Plug 'flazz/vim-colorschemes'
+    "Plug 'flazz/vim-colorschemes'
 
     " One Half Theme
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
@@ -147,6 +149,13 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " ########## Color Schemes ##########
 " Set Colorscheme if onehalfdark isn't found on first start up try again
 silent! colorscheme onehalfdark
+
+" ########## Configurations
+hi Normal guibg=NONE
+hi clear LineNR
+hi clear SignColumn
+
+autocmd ColorScheme * highlight! link SignColumn LineNr
 
 " AirPlane Config set to be silent since this will fail on first startup
 silent! let g:airline_theme='onehalfdark'
@@ -187,6 +196,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_c_compiler_options = "-g -Werror -Wall -MD -std=gnu99"
+let g:syntastic_c_include_dirs = ["/home/cosc360/libfdr/include", "include"]
 
 let g:syntastic_cpp_compiler_options = "-Wall -Wextra -std=c++98"
 let g:syntastic_cpp_include_dirs = ["include", "plank-disjoint-sets/include"]

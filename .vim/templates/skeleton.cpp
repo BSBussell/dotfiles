@@ -1,13 +1,16 @@
 
-// Benjamin S. Bussell
+// Bee S. Bussell
 // <Date>
 // <Program>
 
 #include <iostream>
+#include <cstdio>
+
+using namespace std;
 
 int main() {
 
 
-	std::cout << "Hello World" << std::endl;
+	printf("Hello World\n");
 	return 0;
 }
