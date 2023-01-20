@@ -20,35 +20,39 @@ fi
 # Link all the files
 
 echo "Linking vimrc with ~/.vimrc"
-ln -sf $PWD/vimrc ~/.vimrc
+ln -sf $PWD/cli-configs/vimrc ~/.vimrc
 
 echo "Linking .vim with ~/.vim"
-ln -sf $PWD/.vim ~/
+ln -sf $PWD/cli-configs/.vim ~/
 
 echo "Linking zshrc with ~/.zshrc"
-ln -sf $PWD/zshrc ~/.zshrc
+ln -sf $PWD/cli-configs/zshrc ~/.zshrc
 
 echo "Linking zsh.aliases with ~/.zsh.aliases"
-ln -sf $PWD/zsh.aliases ~/.zsh.aliases
+ln -sf $PWD/cli-configs/zsh.aliases ~/.zsh.aliases
 
 echo "Linking p10k.zsh with ~/.p10k.zsh"
-ln -sf $PWD/p10k.zsh ~/.p10k.zsh
+ln -sf $PWD/cli-configs/p10k.zsh ~/.p10k.zsh
 
 echo "Linking p10kFull.zsh with ~/.p10kFull.zsh"
-ln -sf $PWD/p10kFull.zsh ~/.p10kFull.zsh
+ln -sf $PWD/cli-configs/p10kFull.zsh ~/.p10kFull.zsh
 
 # Check if nvim exists on system and link if it does
-if [ -r "${HOME}/.config/nvim" ] 
+# command -v nvim &> /dev/null
+if command -v nvim &> /dev/null
 then
   echo "Linking nvim with ~/.config/nvim"
-  ln -sf $PWD/nvim ~/.config/nvim
+  ln -sf $PWD/cli-configs/nvim ~/.config/nvim
 fi
 
-echo "Install Nerd Font MesloLGS"
 if [ ! -r "${HOME}/.local/share/fonts" ]
 then
     echo "Making Local Fonts Directory"
     mkdir ~/.local/share/fonts/
 fi
 
-cp MesloLGS_NF_Regular.ttf ~/.local/share/fonts/.
+echo "Install Nerd Font MesloLGS"
+cp fonts/MesloLGS_NF_Regular.ttf ~/.local/share/fonts/.
+
+echo "Setting default shell to zsh"
+chsh -s /bin/zsh

@@ -1,3 +1,4 @@
 
-.vim/plugged/
-.vim/autoload/
+cli-configs/nvim/autoload/
+cli-configs/.vim/plugged/
+cli-configs/.vim/autoload/
