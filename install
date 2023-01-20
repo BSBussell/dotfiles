@@ -45,4 +45,10 @@ then
 fi
 
 echo "Install Nerd Font MesloLGS"
+if [ ! -r "${HOME}/.local/share/fonts" ]
+then
+    echo "Making Local Fonts Directory"
+    mkdir ~/.local/share/fonts/
+fi
+
 cp MesloLGS_NF_Regular.ttf ~/.local/share/fonts/.
