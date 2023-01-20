@@ -90,9 +90,9 @@ colorscheme onehalfdark
 
 " Ensure Background is Transparent
 " This is at the end because I don't want anything to overwrite this
-" hi Normal guibg=NONE ctermbg=NONE
-" hi LineNr ctermbg=NONE guibg=NONE
-" hi SignColumn ctermbg=NONE guibg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
 
 " Ensure Comments are visible on most Themes
 hi Comment guifg=#8594ab

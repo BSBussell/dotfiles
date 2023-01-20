@@ -43,3 +43,6 @@ then
   echo "Linking nvim with ~/.config/nvim"
   ln -sf $PWD/nvim ~/.config/nvim
 fi
+
+echo "Install Nerd Font MesloLGS"
+cp MesloLGS_NF_Regular.ttf ~/.local/share/fonts/.

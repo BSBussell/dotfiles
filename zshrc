@@ -140,7 +140,8 @@ source $ZSH/oh-my-zsh.sh
 if [[ -r "${HOME}/.config/nvim" ]]; then
     alias vi="nvim"
     alias vim="nvim"
-else 
+else
+    alias vi="vim"
     alias nvim="vim"
 fi
 
@@ -166,3 +167,4 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export PATH=$PATH:/home/bee/.spicetify

@@ -10,9 +10,10 @@
 alias RM='rm -f'
 
 alias vimconfig='vi ~/dotfiles/vimrc'
+alias dotfiles='~/dotfiles'
 
 alias c='clear'
-alias ls="ls -G -F" # color ls is cool
+alias ls="ls -G -F -C" # color ls is cool
 alias la="ls -la"
 alias ll="ls -lh"
 alias lla="ls -lah"
