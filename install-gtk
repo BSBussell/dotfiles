@@ -1,5 +1,11 @@
 #!usr/bin/env zsh
 
+echo "Installing NVIM"
+sudo dnf install nvim
+
+echo "Installing Neofetch"
+sudo dnf install neofetch
+
 echo "Linking themes"
 ln -sf $PWD/gnome-configs/themes ~/.themes
 
