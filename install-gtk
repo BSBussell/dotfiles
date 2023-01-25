@@ -7,4 +7,4 @@ echo "Linking Icons"
 ln -sf $PWD/gnome-configs/icons ~/.icons
 
 echo "Loading Settings"
-dconf load / < $PWD/gnome-configs/settings.ini
+dconf load -f / < $PWD/gnome-configs/settings.ini
