@@ -1,0 +1,10 @@
+#!usr/bin/env zsh
+
+echo "Linking themes"
+ln -sf $PWD/gnome-configs/themes ~/.themes
+
+echo "Linking Icons"
+ln -sf $PWD/gnome-configs/icons ~/.icons
+
+echo "Loading Settings"
+dconf load / < $PWD/gnome-configs/settings.ini

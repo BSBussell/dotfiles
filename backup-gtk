@@ -1,0 +1,7 @@
+#!usr/bin/env zsh
+
+echo "Archiving Current Configs"
+mv $PWD/gnome-configs/settings.ini $PWD/gnome-configs/archive/$(date +%m-%d-%y_%H:%M:%S).ini
+
+echo "Dumping settings to .ini"
+ dconf dump / > $PWD/gnome-configs/settings.ini
