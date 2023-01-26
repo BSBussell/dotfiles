@@ -24,7 +24,7 @@ set expandtab
 autocmd BufNewFile *.cpp 0r $HOME/.config/nvim/templates/skeleton.cpp
 
 " AirPlane Config
-let g:airline_theme='onehalfdark'
+let g:airline_theme='fruit_punch'
 " lightline in case we want to use the light color scheme...
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
 
@@ -84,9 +84,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-
 " Theme
-colorscheme onehalfdark
+colorscheme pink-moon
 
 " Ensure Background is Transparent
 " This is at the end because I don't want anything to overwrite this

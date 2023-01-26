@@ -79,3 +79,8 @@ function compareTmp() {
         echo "No Differences"
     fi
 }
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    
+    alias typora="open /Applications/typora.app"
+fi
