@@ -133,6 +133,12 @@ call plug#begin('~/.vim/plugged')
 
     " Colorschemes
     "Plug 'flazz/vim-colorschemes'
+    
+    " Vim Pink Moon Theme
+    Plug 'sts10/vim-pink-moon'
+    
+    " Vim Sun Bather Theme
+    Plug 'nikolvs/vim-sunbather'
 
     " One Half Theme
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
@@ -148,7 +154,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 
 " ########## Color Schemes ##########
 " Set Colorscheme if onehalfdark isn't found on first start up try again
-silent! colorscheme onehalfdark
+silent! colorscheme pink-moon
 
 " ########## Configurations
 hi Normal guibg=NONE
@@ -158,7 +164,7 @@ hi clear SignColumn
 autocmd ColorScheme * highlight! link SignColumn LineNr
 
 " AirPlane Config set to be silent since this will fail on first startup
-silent! let g:airline_theme='onehalfdark'
+silent! let g:airline_theme='fruit_punch'
 
 " ########## Powerline ##########
 let g:airline_powerline_fonts = 1
