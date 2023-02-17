@@ -65,7 +65,7 @@ let g:syntastic_check_on_wq = 0
 
 " Syntastic C++ Options
 let g:syntastic_cpp_compiler_options = "-Wall -Wextra -std=c++17"
-let g:syntastic_cpp_include_dirs = ["src"]
+let g:syntastic_cpp_include_dirs = ["src", "src/*"]
 
 " Git Gutter
 let g:gitgutter_set_sign_backgrounds = 1
@@ -83,6 +83,7 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
 
 " Theme
 colorscheme pink-moon

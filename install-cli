@@ -23,7 +23,7 @@ echo "Linking vimrc with ~/.vimrc"
 ln -sf $PWD/cli-configs/vimrc ~/.vimrc
 
 echo "Linking .vim with ~/.vim"
-ln -sf $PWD/cli-configs/.vim ~/
+ln -sf $PWD/cli-configs/vim/ ~/.vim/
 
 echo "Linking zshrc with ~/.zshrc"
 ln -sf $PWD/cli-configs/zshrc ~/.zshrc
@@ -54,5 +54,9 @@ fi
 echo "Install Nerd Font MesloLGS"
 cp fonts/MesloLGS_NF_Regular.ttf ~/.local/share/fonts/.
 
-echo "Setting default shell to zsh"
-chsh -s /bin/zsh
+if [[ $SHELL != "/bin/zsh" ]]
+then
+    echo "Setting default shell to zsh"
+    echo "Command being run is: chsh -s /bin/zsh"
+    chsh -s /bin/zsh
+fi

@@ -9,7 +9,6 @@
 
 alias RM='rm -f'
 
-alias vimconfig='vi ~/dotfiles/vimrc'
 alias dotfiles='~/dotfiles'
 
 alias c='clear'
@@ -19,6 +18,22 @@ alias ll="ls -lh"
 alias lla="ls -lah"
 alias view="vim -R"
 alias l='less'
+
+
+if [[ -r "${HOME}/.config/nvim" ]]; then
+    alias vi="nvim"
+    alias vim="nvim"
+    alias vimcfg="vi ~/.config/nvim/init.vim"
+else
+    alias vi="vim"
+    alias nvim="vim"
+    alias vimcfg="vi ~/.vimrc"
+fi
+
+
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias vimcfg="vi ~/.config/nvim/init.vim"
+
 
 alias got='echo "Got Milk?"; sleep 1; git'
 
@@ -80,6 +95,7 @@ function compareTmp() {
     fi
 }
 
+# Alias specifically for MAC
 if [[ "$OSTYPE" == "darwin"* ]]; then
     
     alias typora="open /Applications/typora.app"

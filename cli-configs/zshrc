@@ -137,33 +137,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [[ -r "${HOME}/.config/nvim" ]]; then
-    alias vi="nvim"
-    alias vim="nvim"
-else
-    alias vi="vim"
-    alias nvim="vim"
-fi
-
-
-
-
-alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
-
-alias vimCfg="vi ~/.config/nvim/init.vim"
-
+# BEE put your aliases in zsh.aliase
 
 TIMEFMT=$'===================\n\nreal\t%E\nuser\t%U\nsys\t%S'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# If statement here exists to change the terminal if logging in from iPhone
-hostname=$(who am i | cut -f2  -d\( | rev | cut -c2- | rev )
-if [[ $hostname == "bbusphone.nomads.utk.edu" ]]
-then
-    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-else    
-    [[ ! -f ~/.p10kFull.zsh ]] || source ~/.p10kFull.zsh
-fi
+# hostname=$(who am i | cut -f2  -d\( | rev | cut -c2- | rev )
+# If we are on laptop
+#if [[ $USERNAME == "programming" ]]
+#then
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#else    
+#    [[ ! -f ~/.p10kFull.zsh ]] || source ~/.p10kFull.zsh
+#fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

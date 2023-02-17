@@ -34,6 +34,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " The Nerd Tree Git
     Plug 'Xuyuanp/nerdtree-git-plugin'
 
+
+    Plug 'kassio/neoterm'
+
     "Themes
 
     " Vim Pink Moon Theme
@@ -42,5 +45,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nikolvs/vim-sunbather'
     " One Half Theme
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
+    Plug 'ryanoasis/vim-devicons'
+
 
 call plug#end()
