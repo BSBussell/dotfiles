@@ -46,6 +46,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " One Half Theme
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
+    " Icons :3
     Plug 'ryanoasis/vim-devicons'
 
 
