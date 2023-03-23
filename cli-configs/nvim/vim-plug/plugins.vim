@@ -45,9 +45,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nikolvs/vim-sunbather'
     " One Half Theme
     Plug 'sonph/onehalf', { 'rtp': 'vim' }
+    "NightFox
+    Plug 'EdenEast/nightfox.nvim' " Vim-Plug
 
     " Icons :3
     Plug 'ryanoasis/vim-devicons'
 
+    " COC.nvim
+    "Plug 'neoclide/coc.nvim'
 
-call plug#end()
+    " Github Copilot
+    Plug 'github/copilot.vim'
+
+    call plug#end()

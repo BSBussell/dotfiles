@@ -86,7 +86,7 @@ endif
 
 
 " Theme
-colorscheme pink-moon
+colorscheme duskfox 
 
 " Ensure Background is Transparent
 " This is at the end because I don't want anything to overwrite this
